@@ -53,13 +53,13 @@ docker-compose up -d
 docker exec -it prueba_rrhh_app composer install
 ```
 
-5. Ejecuta migraciones si las hay (opcional):
+5. Crea las tablas de base de datos:
 
-Este proyecto no incluye migraciones automáticas generadas con Doctrine Migrations Bundle.  
-Si decides implementarlas, asegúrate de instalar el bundle y configurar la carpeta `migrations/`.
+Este proyecto no incluye migraciones automáticas. Para usar Doctrine Migrations, debe configurarlas.  
+Si no puede generar las tablas directamente con:
 
 ```bash
-docker exec -it prueba_rrhh_app php bin/console doctrine:migrations:migrate
+docker exec -it prueba_rrhh_app php bin/console doctrine:schema:create
 ```
 
 ---
